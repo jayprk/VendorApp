@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.app.dao.ICustomerDao;
 import com.app.model.Customer;
-import com.app.model.Location;
 
 @Repository
 public class CustomerDaoImpl implements ICustomerDao {
@@ -43,10 +42,18 @@ public class CustomerDaoImpl implements ICustomerDao {
 
 	@Override
 	public List<Object[]> getCustomerTypeAndCount() {
-		String hql = "select custType,count(custId) from "
-				+ Customer.class.getName() + " group by custType";
-		List<Object[]> list = ht.find(hql);
+		String hql= " select loc.locName,count(loc.locName) " +
+				" from com.app.model.Customer cust " +
+				" inner join " +
+				" cust.loc as loc " +
+				" group by loc.locName ";
+	List<Object[]> list=ht.find(hql);
 		return list;
+	}
+
+	@Override
+	public Customer getCustomerByEmailId(String un) {
+		return ht.get(Customer.class,un);
 	}
 
 }

@@ -22,9 +22,19 @@
 				<td><input type="text" name="custName" /></td>
 			</tr>
 			<tr>
+				<td>LOCATION</td>
+				<td><select name="loc.locId">
+						<option value="">--select--</option>
+						<c:forEach items="${locsUi}" var="locOb">
+							<option value="${locOb.locId}">${locOb.locName}</option>
+						</c:forEach>
+				</select></td>
+			</tr>
+			<tr>
 				<td>EMAIL</td>
 				<td><input type="text" name="custEmail" /></td>
 			</tr>
+			
 			<tr>
 				<td>TYPE</td>
 				<td><select name="custType">
@@ -42,7 +52,7 @@
 				<td colspan="2"><input type="submit" value="Register" /></td>
 			</tr>
 		</table>
-	</form>
-	${message}
+	</form><br><br>
+	<div style="color:green;text-align: center;font: bolder;">${message}</div>
 </body>
 </html>

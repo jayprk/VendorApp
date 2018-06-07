@@ -43,7 +43,7 @@ public class LocationDaoImpl implements ILocationDao{
 
 	@Override
 	public List<Object[]> getLocationTypeAndCount() {
-		 String hql="select locType,count(locId) from "+Location.class.getName()+" group by locType";
+		String hql="select locType,count(locId) from "+Location.class.getName()+" group by locType";
 		List<Object[]> list=ht.find(hql);
 		return list;
 	}

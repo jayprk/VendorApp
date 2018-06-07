@@ -37,7 +37,7 @@ public class VendorController {
 	@RequestMapping(value = "insertVendor", method = RequestMethod.POST)
 	public String saveVendor(@ModelAttribute("vendor") Vendor ven, ModelMap map) {
 		int venId = service.saveVendor(ven);
-		String msg = "Vendor Record Successfully Inserted with Id::" + venId;
+		String msg = "New Vendor has been Inserted with Id ::" + venId;
 		map.addAttribute("Msg", msg);
 		return "VendorReg";
 	}

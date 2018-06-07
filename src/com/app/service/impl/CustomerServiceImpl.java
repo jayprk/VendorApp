@@ -55,4 +55,9 @@ public class CustomerServiceImpl implements ICustomerService {
 		return dao.getCustomerTypeAndCount();
 	}
 
+	@Override
+	public Customer getCustomerByEmailId(String un) {
+		return dao.getCustomerByEmailId(un);
+	}
+
 }

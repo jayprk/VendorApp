@@ -39,14 +39,6 @@
 				    <a href="editLoc?locationId=${loc.locId}"><img src="../Images/LocationEdit.png" width="25" height="25"/></a></td>
 			</tr>
 		</c:forEach>
-	</table>
-	
-	<a href="locExcelExport">Get Records in Excel Format</a><br><br>
-	<a href="locPdfExport">Get Records in Pdf Format</a><br><br>
-	<a href="locReport">Get Records in Charts Format</a>
-	
-	<br>
-	<br>
-	<a href="locHome"><b>Go Back to Registration Page</b></a>
+	</table>	
 </body>
 </html>

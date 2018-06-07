@@ -9,11 +9,17 @@ import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
+import com.app.service.ILocationService;
+
 @Component
 public class CustomerUtil {
+	
+	@Autowired
+	private ILocationService service;
 
 	// 1. to create pie chart
 	public void createPie(List<Object[]> data, String path) {
@@ -63,7 +69,7 @@ public class CustomerUtil {
 
 	public void addUiComponents(ModelMap map) {
 		map.addAttribute("custTypesUi", getCustTypes());
-	//	map.addAttribute("locsUi", service.getAllLocations());
+		map.addAttribute("locsUi", service.getAllLocations());
 
 	}
 

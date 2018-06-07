@@ -9,8 +9,6 @@
 <body>
 <%@include file="UserMenu.jsp"%>
 	<img src="../reportVendorPie.jpg"/>
-	<img src="../reportVendorBar.jpg"/><br><br>
-	
-	<a style="text-align:center" href="viewAllVendor" >Go Back</a>
+	<img src="../reportVendorBar.jpg"/><br><br>	
 </body>
 </html>

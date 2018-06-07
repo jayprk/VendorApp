@@ -38,6 +38,7 @@
 				<value>com.app.model.Vendor</value>
 				<value>com.app.model.Document</value>
 				<value>com.app.model.Customer</value>
+				<value>com.app.model.Item</value>
 			</list>
 		</property>
 	</bean>

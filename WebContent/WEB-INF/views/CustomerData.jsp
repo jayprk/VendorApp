@@ -23,10 +23,9 @@ th {
 		<tr>
 			<th>ID</th>
 			<th>NAME</th>
+			<th>LOCATION</th>
 			<th>EMAIL</th>
 			<th>TYPE</th>
-			<th>TOKEN</th>
-			<th>PASSWORD</th>
 			<th>ADDRESS</th>
 			<th>OPERATION</th>
 		</tr>
@@ -34,10 +33,9 @@ th {
 			<tr>
 				<td><c:out value="${cust.custId}" /></td>
 				<td><c:out value="${cust.custName}" /></td>
+				<td><c:out value="${cust.loc.locName}" /></td>
 				<td><c:out value="${cust.custEmail}" /></td>
 				<td><c:out value="${cust.custType}" /></td>
-				<td><c:out value="${cust.custToken}" /></td>
-				<td><c:out value="${cust.cPassword}" /></td>
 				<td><c:out value="${cust.custAddrs}" /></td>
 				<td><a href="deleteCust?custId=${cust.custId}"><img
 						src="../Images/LocationDelete.png" width="25" height="25"
@@ -50,6 +48,5 @@ th {
 
 	<br>
 	<br>
-
 </body>
 </html>

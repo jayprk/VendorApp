@@ -44,8 +44,12 @@ public class VendorDaoImpl implements IVendorDao{
 
 	@Override
 	public List<Object[]> getVendorTypeAndCount() {
-		 String hql="select venType,count(venId) from "+Vendor.class.getName()+" group by venType";
-			List<Object[]> list=ht.find(hql);
+		String hql= " select loc.locName,count(loc.locName) " +
+				" from com.app.model.Vendor ven " +
+				" inner join " +
+				" ven.loc as loc " +
+				" group by loc.locName ";
+	List<Object[]> list=ht.find(hql);
 			return list;
 	}
 

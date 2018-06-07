@@ -17,4 +17,10 @@
 
 	<bean name="venExcel" class="com.app.view.VendorExcelView"/>
 	<bean name="venPdf" class="com.app.view.VendorPdfView"/>
+	
+	<bean name="CustExcel" class="com.app.view.CustomerExcelView"/>
+	<bean name="CustPdf" class="com.app.view.CustomerPdfView"/>
+	
+	<bean name="ItemExcel" class="com.app.view.ItemExcelView"/>
+	<bean name="ItemPdf" class="com.app.view.ItemPdfView"/>
 </beans>

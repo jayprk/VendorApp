@@ -63,7 +63,7 @@
     display: block;
 }
 </style>
-<img src="../images/banner.jpg"/>
+<img src="../Images/banner.jpg"/>
 <div class="navbar">
   <a href="#home">Home</a>
   
@@ -75,8 +75,10 @@
     </button>
     <div class="dropdown-content">
       <a href="locHome">Register</a>
-      <a href="ViewAllLocs">View All</a>
-      <a href="locReport">Reports</a>
+      <a href="ViewAllItems">View All</a>
+      <a href="itemPdfExport">PDF Format</a>
+      <a href="itemExcelExport">Excel Format</a>
+      <a href="itemReport">Reports</a>
     </div>
   </div> 
   <!-- Location End -->
@@ -89,6 +91,8 @@
     <div class="dropdown-content">
       <a href="venHome">Register</a>
       <a href="viewAllVendor">View All</a>
+      <a href="venPdfExport">PDF Format</a>
+      <a href="venExelExport">Excel Format</a>
       <a href="venReport">Reports</a>
     </div>
   </div> 
@@ -103,10 +107,27 @@
     <div class="dropdown-content">
       <a href="custReg">Register</a>
       <a href="ViewAllCust">View All</a>
+      <a href="custPdfExport">PDF Format</a>
+      <a href="custExcelExport">Excel Format</a>
       <a href="custReport">Reports</a>
     </div>
   </div> 
   <!-- Customer End -->
+  
+  <!-- Item Start -->
+  <div class="dropdown">
+    <button class="dropbtn">Item 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="itemHome">Register</a>
+      <a href="ViewAllCust">View All</a>
+      <a href="custPdfExport">PDF Format</a>
+      <a href="custExcelExport">Excel Format</a>
+      <a href="custReport">Reports</a>
+    </div>
+  </div> 
+  <!-- Item End -->
   
   <!-- Docs start-->
   <!-- 	<a href="showDocs">DOCUMENTS</a> -->

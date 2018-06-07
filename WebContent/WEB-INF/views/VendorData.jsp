@@ -37,7 +37,7 @@ th {
 				<td>${ven.loc.locName}</td>
 				<td>${ven.loc.locType}</td>
 				<td>${ven.venType}</td>
-				<td>${ven.loc.locName}</td>
+				<td>${ven.venAddrs}</td>
 				<td>${ven.venIdType}</td>
 				<td>${ven.venIdNum}</td>
 				<td>${ven.venDsc}</td>
@@ -48,18 +48,5 @@ th {
 			</tr>
 		</c:forEach>
 	</table>
-	<br>
-	<br>
-	<br>
-	<a href="venExelExport">Get Records in Excel Format</a>
-	<br>
-	<br>
-	<a href="venPdfExport">Get Records in PDF Format</a>
-	<br>
-	<br>
-	<a href="venReport">Get Records in Charts Format</a>
-	<br>
-	<br>
-	<a href="venHome">Go Back to Registration Page</a>
 </body>
 </html>

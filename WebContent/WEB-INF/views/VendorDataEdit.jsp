@@ -9,7 +9,8 @@
 </head>
 <body>
 	<%@include file="UserMenu.jsp"%>
-	<h1 style="color: red; text-align: center">Welcome to Vendor Edit Page!!</h1>
+	<h1 style="color: red; text-align: center">Welcome to Vendor Edit
+		Page!!</h1>
 	<form action="updateVen" method="post">
 		<table align="center" frame="border" bordercolor="red">
 			<tr>
@@ -28,7 +29,7 @@
 			<tr>
 				<td>Location</td>
 				<td><select name="loc.locId">
-						<option value="">--select--</option>
+						<option value="-1">--select--</option>
 						<c:forEach items="${locsUi}" var="locOb">
 							<c:choose>
 								<c:when test="${ven.loc.locId eq locOb.locId }">
@@ -45,17 +46,19 @@
 			</tr>
 			<tr>
 				<td>TYPE</td>
-				<td><c:forEach items="${venTypesUi}" var="ob">
+				<td>
+				  <c:forEach items="${venTypesUi}" var="ob">
 						<c:choose>
 							<c:when test="${ven.venType eq ob}">
-								<input type="radio" name="venType" value="${ob}"
-									checked="checked">${ob}
-		 	</c:when>
+								<input type="radio" name="venType" value="${ob}" checked="checked">${ob}
+		                	</c:when>
+		                	
 							<c:otherwise>
 								<input type="radio" name="venType" value="${ob}">${ob}
-		 	</c:otherwise>
+		 	                </c:otherwise>
 						</c:choose>
-					</c:forEach></td>
+				 </c:forEach>
+			 </td>
 			</tr>
 			<tr>
 				<td>ADDRESS</td>

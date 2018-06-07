@@ -11,6 +11,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.web.servlet.view.document.AbstractExcelView;
 
+import com.app.model.Location;
 import com.app.model.Vendor;
 
 public class VendorExcelView extends AbstractExcelView {
@@ -36,10 +37,13 @@ public class VendorExcelView extends AbstractExcelView {
 		row.createCell(0).setCellValue("ID");
 		row.createCell(1).setCellValue("NAME");
 		row.createCell(2).setCellValue("CODE");
-		row.createCell(3).setCellValue("TYPE");
-		row.createCell(4).setCellValue("ADDRESS");
-		row.createCell(5).setCellValue("IDTYPE");
-		row.createCell(6).setCellValue("DESCRIPATION");
+		row.createCell(3).setCellValue("LOCATION");
+		row.createCell(4).setCellValue("LOC TYPE");
+		row.createCell(5).setCellValue("VEN TYPE");
+		row.createCell(6).setCellValue("ADDRESS");
+		row.createCell(7).setCellValue("IDTYPE");
+		row.createCell(8).setCellValue("ID NUM");
+		row.createCell(9).setCellValue("DESCRIPATION");
 	}
 
 	public void setBody(HSSFSheet sheet, List<Vendor> listVen) {
@@ -49,10 +53,13 @@ public class VendorExcelView extends AbstractExcelView {
 			row.createCell(0).setCellValue(ven.getVenId());
 			row.createCell(1).setCellValue(ven.getVenName());
 			row.createCell(2).setCellValue(ven.getVenCode());
-			row.createCell(3).setCellValue(ven.getVenType());
-			row.createCell(4).setCellValue(ven.getVenAddrs());
-			row.createCell(5).setCellValue(ven.getVenIdType());
-			row.createCell(6).setCellValue(ven.getVenDsc());
+			row.createCell(3).setCellValue(ven.getLoc().getLocName());
+			row.createCell(4).setCellValue(ven.getLoc().getLocType());
+			row.createCell(5).setCellValue(ven.getVenType());
+			row.createCell(6).setCellValue(ven.getVenAddrs());
+			row.createCell(7).setCellValue(ven.getVenIdType());
+			row.createCell(8).setCellValue(ven.getVenIdNum());
+			row.createCell(9).setCellValue(ven.getVenDsc());
 		}
 	}
 

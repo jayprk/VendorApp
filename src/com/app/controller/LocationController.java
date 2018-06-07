@@ -46,7 +46,7 @@ public class LocationController {
 	@RequestMapping(value = "insertLoc", method = RequestMethod.POST)
 	public String saveLoc(@ModelAttribute("location") Location loc, ModelMap map) {
 		int locId = service.saveLocation(loc);
-		String m = "Location created::" + locId;
+		String m = "New Location has been created with Id  ::" + locId;
 		map.addAttribute("message", m);
 		return "LocationReg";
 	}

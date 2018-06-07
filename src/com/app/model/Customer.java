@@ -3,6 +3,8 @@ package com.app.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,6 +32,10 @@ public class Customer {
 
 	@Column(name = "caddrs")
 	private String custAddrs;
+	
+	@ManyToOne
+	@JoinColumn(name = "locIdFk")
+	private Location loc; // HAS-A
 
 	public Customer() {
 		// no code
@@ -95,12 +101,21 @@ public class Customer {
 		this.custAddrs = custAddrs;
 	}
 
+	public Location getLoc() {
+		return loc;
+	}
+
+	public void setLoc(Location loc) {
+		this.loc = loc;
+	}
+
 	@Override
 	public String toString() {
 		return "Customer [custId=" + custId + ", custName=" + custName
 				+ ", custEmail=" + custEmail + ", custType=" + custType
 				+ ", cPassword=" + cPassword + ", custToken=" + custToken
-				+ ", custAddrs=" + custAddrs + "]";
+				+ ", custAddrs=" + custAddrs + ", loc=" + loc + "]";
 	}
 
+	
 }

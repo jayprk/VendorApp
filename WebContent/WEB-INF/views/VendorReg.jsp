@@ -41,7 +41,7 @@
 			</tr>
 			<tr>
 				<td>ADDRESS</td>
-				<td><textarea name="venAddr"></textarea></td>
+				<td><textarea name="venAddrs"></textarea></td>
 			</tr>
 			<tr>
 				<td>ID PROOF</td>
@@ -64,7 +64,7 @@
 				<td colspan="2"><input type="submit" value="Register" /></td>
 			</tr>
 		</table>
-	</form>
-	${Msg}
+	</form><br><br>
+	<div style="color:green;text-align: center;font: bolder;">${Msg}</div>
 </body>
 </html>

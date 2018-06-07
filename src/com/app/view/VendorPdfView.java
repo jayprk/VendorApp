@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.view.document.AbstractPdfView;
 
+import com.app.model.Location;
 import com.app.model.Vendor;
 import com.lowagie.text.Document;
 import com.lowagie.text.Font;
@@ -17,7 +18,7 @@ import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 
 public class VendorPdfView extends AbstractPdfView{
-
+	
 	@Override
 	protected void buildPdfDocument(Map<String, Object> map, Document doc,
 			PdfWriter pw, HttpServletRequest req, HttpServletResponse res)
@@ -28,13 +29,16 @@ public class VendorPdfView extends AbstractPdfView{
 		//create paragraph
 		Paragraph p=new Paragraph("Welcome to Vendor Pdf document\n\n",new Font(Font.TIMES_ROMAN));
 		Paragraph dte=new Paragraph(new Date().toString());
-		PdfPTable table=new PdfPTable(7);
+		PdfPTable table=new PdfPTable(10);
 		table.addCell("ID");
 		table.addCell("NAME");
 		table.addCell("CODE");
-		table.addCell("TYPE");
+		table.addCell("LOCATION");
+		table.addCell("LOC TYPE");
+		table.addCell("VEN TYPE");
 		table.addCell("ADDRESS");
-		table.addCell("IDTYPE");
+		table.addCell("ID TYPE");
+		table.addCell("ID NUM");
 		table.addCell("DESCRIPTION");
 		
 		//Add data into table
@@ -42,9 +46,12 @@ public class VendorPdfView extends AbstractPdfView{
 			table.addCell(ven.getVenId()+"");
 			table.addCell(ven.getVenName());
 			table.addCell(ven.getVenCode());
+			table.addCell(ven.getLoc().getLocName());
+			table.addCell(ven.getLoc().getLocType());
 			table.addCell(ven.getVenType());
 			table.addCell(ven.getVenAddrs());
 			table.addCell(ven.getVenIdType());
+			table.addCell(ven.getVenIdNum());
 			table.addCell(ven.getVenDsc());
 		}
 		

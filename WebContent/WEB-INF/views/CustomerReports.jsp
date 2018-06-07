@@ -10,9 +10,5 @@
 <%@include file="UserMenu.jsp"%>
 	<img src="../reportCustomerPie.jpg" />
 	<img src="../reportCustomerBar.jpg" />
-	<br>
-	<br>
-
-	<a style="text-align: center" href="ViewAllCust">Go Back</a>
 </body>
 </html>

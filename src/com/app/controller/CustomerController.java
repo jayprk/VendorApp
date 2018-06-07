@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.model.Customer;
+import com.app.model.Location;
 import com.app.service.ICustomerService;
 import com.app.util.CoDecUtil;
 import com.app.util.CodeUtil;
@@ -69,7 +70,7 @@ public class CustomerController {
 				+ " \nPassword is " + pwd;
 		commonUtil.sendEmail(cust.getCustEmail(), "Registration Details", text);
 		// message to UI
-		String msg = "Register with Id " + custId;
+		String msg = "New Customer has been Registered with Id " + custId;
 		map.addAttribute("message", msg);
 		return "CustomerReg";
 
@@ -79,6 +80,7 @@ public class CustomerController {
 	public String getAllCust(ModelMap map) {
 		List<Customer> custs = service.getAllCustomers();
 		map.addAttribute("custs", custs);
+		util.addUiComponents(map);
 		return "CustomerData";
 	}
 
@@ -94,6 +96,7 @@ public class CustomerController {
 		Customer cust = null;
 		cust = service.getCustomerById(custId);
 		map.addAttribute("custs", cust);
+	    util.addUiComponents(map);
 		return "CustomerDataEdit";
 	}
 
@@ -102,11 +105,19 @@ public class CustomerController {
 		service.updateCustomer(cust);
 		return "redirect:ViewAllCust";
 	}
+	
+	@RequestMapping(value="custExcelExport")
+	public String exportToExcel(ModelMap map){
+		List<Customer> listCustomer= service.getAllCustomers();
+		map.addAttribute("custs",listCustomer);
+	//	map.addAttribute("locs",service.getAllLocations());
+		return "CustExcel";
+	}
 
 	@RequestMapping(value = "custPdfExport")
 	public String exportToPdf(ModelMap map) {
-		map.addAttribute("cust", service.getAllCustomers());
-		return "custPdf";
+		map.addAttribute("custs", service.getAllCustomers());
+		return "CustPdf";
 	}
 
 	@RequestMapping(value = "custReport")
